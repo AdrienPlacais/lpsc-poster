@@ -1,0 +1,77 @@
+% -------------------------------------------------
+% General
+% -------------------------------------------------
+% Normal figures
+\newcommand\fheight{.25*\colwidth}
+\newcommand\fwidth{\colwidth-\sepwidth}
+
+% -------------------------------------------------
+% Tikz
+% -------------------------------------------------
+\usepackage{tikz}                      % Generate plot from csv
+\usepackage{tikzscale}
+% \usetikzlibrary{positioning}           % Better handling of tikz pictures in subfigures
+% \usetikzlibrary{spy}                   % Local zooms
+\usetikzlibrary{arrows.meta}           % New arrow heads
+% \usetikzlibrary{shapes}
+% \usetikzlibrary{calc} % To calculate position between two nodes
+% \usetikzlibrary{shapes.geometric}
+% \usetikzlibrary{fit} % To compute rectangle encompassing several nodes
+
+% -------------------------------------------------
+% Pgf plots, to generate plots from data files
+% -------------------------------------------------
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.colorbrewer}  % For ColorBrewer, a sweet colors generator
+\usetikzlibrary{pgfplots.groupplots}   % For groups of plots (equivalent of subfig for pgf plots)
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{units}             % For sweet units in pgfplots
+
+% Set personnalized color and marker list
+\pgfplotsset{
+   compat=newest,
+   %---------------------------------------
+   % Define style for classic plots
+   %---------------------------------------
+   enlarge x limits=false, 	% Prevent margins between first/last data and left/right axis.
+   x tick label style={/pgf/number format/.cd,set thousands separator={\,}}, % To avoid 1 000 written as 1,000
+   y tick label style={/pgf/number format/.cd,set thousands separator={\,}}, % To avoid 1 000 written as 1,000
+   legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80.0!black},
+   cycle list/Dark2-8, 			% Set the list of colors
+   cycle multiindex* list={%	            % In order to also have different markers
+      mark=*,mark=*,mark=*,mark=*\nextlist% List of markers
+      Dark2-8\nextlist 		               % List of colors
+      },
+   normalplot/.style={%
+      width=\fwidth, height=\fheight,
+      legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80.0!black},
+      legend cell align={left},
+      legend pos=north west,
+      grid=major,
+      mark size=3pt,
+      every axis plot/.append style={ultra thick},
+   },
+}
+
+\tikzset{%
+   myhead/.tip = {Stealth[scale=2]},
+   arrow/.style = {-{Stealth[scale=1.5]}, thick},
+   basetext/.style = {rectangle, anchor=south, font=\normalsize, fill=white, midway, below=1cm},
+   blockcomment/.style = {basetext, minimum height=2em, minimum width=2em,
+                          fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80.0!LPSCdarkblue, fill=LPSCbg,
+                          above=1.0cm, anchor=south, font=\small,
+                         },
+}
+
+% -------------------------------------------------
+% Externalization
+% -------------------------------------------------
+\usepgfplotslibrary{external}     % Auto save tikz plots to avoid recompilation each time
+\tikzexternalize[
+   only named=true,     % Activate externalization, with auto-update of changed .tikz files
+   % mode=list and make,  % Skips figure that needs a recompilation, but produce a makefile to create figures separately.
+                        % make -f main.makefile -j 4 will produce figures with 4 parallel cores.
+   mode=convert with system call,
+]
+% To save externalized in a separated folder:
+\tikzsetexternalprefix{figures/external/}

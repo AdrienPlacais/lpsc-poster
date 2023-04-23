@@ -1,0 +1,165 @@
+\input{preamble.tex}
+\input{preamble_tikz.tex}
+% \addbibresource{main.bib}
+\begin{document}
+
+\begin{frame}[t]
+   \begin{columns}[t]
+      \separatorcolumn
+      \begin{column}{\colwidth}
+         \begin{block}{Why do we want to compensate cavity failures?}
+            The RF cavities in LINACs are subject to failures, which can lead to beam losses.
+            It is a major problem for Accelerator Driven Systems (ADS), as every beam trip cause adverse thermal stress on the structure and as the restart procedure can be time-consuming.
+            A faulty cavity can be compensated for by retuning it's neighboring cavities.
+            \begin{figure}
+               \centering
+               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+               \caption{%
+                  Local compensation of a failed cavity (red).
+                  The \num{5} neighboring cavities (orange) compensate for the fault; cavities in green remain untouched.
+               }
+               \label{fig:compensation_scheme}
+            \end{figure}
+            Several tools such as TraceWin can find compensation settings.
+            However, the process require a lot of manual work, which is time-consuming and error-prone.
+
+            Hence we developed LightWin, a tool to automatically find compensation settings, already tested on the MYRRHA--ADS \alert{(i) does it work for another linac?}
+
+            It is a longitudinal beam dynamics code.
+            For the sake of rapidity: envelope simulations only, hence no multiparticle or space-charge effects \alert{(ii) are these approximations too bold?}
+         \end{block}
+
+         \begin{block}{Presentation of the study case}
+            \begin{figure}[hbtp]
+               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+               \caption{%
+                  Structure of the JAEA--ADS.
+                  \alert{We study the \nth{2} half of EllipR2: \( 940 \rightarrow \SI{1.5}{\GeV} \)}.
+               }
+               \label{fig:jaea_structure}
+            \end{figure}
+            JAEA--ADS is a project of ADS driven by a \SI{20}{\mA} \SI{1.5}{\GeV} proton beam.
+            Cavities accelerating field \( \Eacc \) can be increased by \SI{20}{\percent} for compensation purposes.
+            It's study is particularly interesting for us:
+            \begin{enumerate}[(i)]
+               \item a previous compensation study was realized using TraceWin and will serve as a benchmark;
+               \item it's beam current is high, hence space-charge effects should be significant.
+            \end{enumerate}
+            We focus on the last \num{8} periods of the linac.
+         \end{block}
+
+         \begin{block}{Compensation with LightWin (+ TraceWin)}
+            \begin{figure}[hbtp]
+               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+               \caption{Flowchart of the compensation process.}
+               \label{fig:flowchart}
+            \end{figure}
+         \end{block}
+
+         \begin{block}{LightWin (+ TraceWin) \emph{vs} TraceWin only from Ref.~: similar performances}
+            \begin{table}
+               \caption{%
+                  Beam optics performance for this study.
+                  TraceWin results are taken from Ref.~.
+                  We outlined the beam optics that were better with TraceWin than with LightWin.
+                  \alert{Both tools are equally performant\ldots~but LightWin is automatic.}
+               }
+               \label{tab:optics}
+               \begin{center}
+                  \begin{tabular}{@{} l c c c c c c c c @{}}
+                     \toprule
+                     & \multicolumn{4}{c}{$\Delta\varepsilon/\varepsilon_0$ [\si{\percent}]}     & \multicolumn{4}{c}{M} \\
+                     \cmidrule(l){2-5}         \cmidrule(r){6-9}         
+                     & \multicolumn{2}{c}{Transverse} &\multicolumn{2}{c}{Longitudinal} &\multicolumn{2}{c}{Transverse} &\multicolumn{2}{c}{Longitudinal} \\
+                     \cmidrule(l){2-3}\cmidrule(rl){4-5}\cmidrule(rl){6-7}\cmidrule(r){8-9}
+                     Faulty cavity & LightW  & TraceW       & LightW    & TraceW    & LightW & TraceW         & LightW  & TraceW                    \\
+                     \midrule                                                                                                                                   
+                     257  & \num{ 0.42}         &\num{1.07}        & \num{-1.11} &  \num{1.52} & \alert{\num{0.03}} & \alert{\num{0.02}} & \alert{\num{0.10}}& \alert{\num{0.09}}  \\
+                     258  & \num{ 0.11}         &\num{0.88}        & \num{-0.27} &  \num{1.02} & \num{0.01} & \num{0.01}         & \num{0.02}& \num{0.09}                   \\
+                     289  & \num{-0.01}         &\num{0.09}        & \num{-0.10} &  \num{0.13} & \num{0.00} & \num{0.01}         & \num{0.00}& \num{0.04}                   \\
+                     290  & \num{-0.06}         &\num{-0.17}       & \num{ 0.10} &  \num{0.25} & \num{0.00} & \num{0.03}         & \num{0.01}& \num{0.08}                   \\
+                     291  & \alert{\num{ 0.12}} &\alert{\num{0.04}}& \num{-0.03} &  \num{0.13} & \num{0.01} & \num{0.03}         & \num{0.03}& \num{0.09}                   \\
+                     292  & \alert{\num{-0.09}} &\alert{\num{0.04}}& \num{ 0.10} &  \num{0.25} & \num{0.01} & \num{0.03}         & \num{0.02}& \num{0.09}                   \\
+                     293  & \num{-0.02}         &\num{0.21}        & \num{ 0.17} &  \num{0.25} & \num{0.01} & \num{0.03}         & \num{0.02}& \num{0.09}                   \\
+                     289--293& \num{ 0.18}         &\num{1.78}  & \num{-0.29} &  \num{-1.27} & \alert{\num{0.13}} & \alert{\num{0.02}}         & \alert{\num{0.35}}& \alert{\num{0.06}}                   \\
+         % 289--293      & \num{-0.40}         &\num{1.78}        & \alert{\num{10.78}}  &  \alert{\num{-1.27}} & \alert{\num{0.08}} & \alert{\num{0.02}}         & \alert{\num{0.11}}& \alert{\num{0.06}}                   \\
+                     \bottomrule
+                  \end{tabular}
+               \end{center}
+            \end{table}
+         \end{block}
+
+      \end{column}
+      \separatorcolumn
+      \begin{column}{\colwidth}
+         \begin{block}{Cavity error \#289: new cavity settings}
+            Example of cavity error \#289, near the end of the linac.
+            \emph{k-out-of-n} compensation method: \num{5} compensating cavities per error, as in \reffig{compensation_scheme}.
+            \begin{figure}
+               \centering
+               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+               \caption{%
+                  Accelerating fields and synchronous phases of the cavities for the baseline design, the design from this study and the design from previous study Ref.
+               }
+            \end{figure}
+         \end{block}
+
+         \begin{block}{Cavity error \#289: densities}
+            \begin{figure}
+               \centering
+               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+               \caption{%
+                  Beam densities in the transverse and longitudinal planes.
+                  Calculated with TraceWin, \( 10^6 \) particles.
+               }
+            \end{figure}
+
+            \begin{figure}[hbtp]
+               \subfloat[][Input]{            \includegraphics[width=.24\columnwidth]{example-image-a}}
+               \subfloat[][Output (baseline)]{ \includegraphics[width=.24\columnwidth]{example-image-a}}
+               \subfloat[][Output (LightWin (+ TraceWin))]{\includegraphics[width=.24\columnwidth]{example-image-a}}
+               \subfloat[][Output (TraceWin only Ref.)]{\includegraphics[width=.24\columnwidth]{example-image-a}}
+               \caption{%
+                  Yellow ellipses are \SI{100}{\percent} emittances.
+               }
+               \label{fig:emittance}
+            \end{figure}
+         \end{block}
+
+            \begin{block}{Conclusions and perspectives}
+               We showed that:
+               \begin{itemize}
+                  \item LightWin finds acceptable compensation settings;
+                     \begin{itemize}
+                        \item[\( \rightarrow \)] similar to TraceWin, but LightWin is automatic;
+                     \end{itemize}
+                  \item neglecting space-charge effects is acceptable in this section.
+               \end{itemize}
+               Future work:
+               \begin{itemize}
+                  \item perform similar study at the start of JAEA--ADS linac;
+                     \begin{itemize}
+                        \item lower energy \( \rightarrow \) space-charge effects more prominent;
+                        \item if necessary: implement transverse dynamics, space-charge in LightWin;
+                     \end{itemize}
+                  \item new optimisation algorithms;
+                  \item explore new compensation paradigm (\eg for SPIRAL2):
+                     \begin{itemize}
+                        \item no increase in accelerating field\ldots
+                        \item \ldots~but use more cavities for compensation: \alert{global compensation}.
+                     \end{itemize}
+               \end{itemize}
+               % \todo{Shift items to right in enumerate}
+               % \todo{reduce space above jaea fig}
+            \end{block}
+
+            % \printbibliography
+         \end{column}
+         \separatorcolumn
+      \end{columns}
+\end{frame}
+
+\end{document}

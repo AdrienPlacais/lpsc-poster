@@ -1,0 +1,117 @@
+% Based on Gemini theme
+% https://github.com/anishathalye/gemini
+\documentclass[final]{beamer}
+
+% ====================
+% Packages (default)
+% ====================
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[orientation=portrait, size=a0]{beamerposter}
+\usetheme{lpscposter}
+\usecolortheme{lpscposter}
+\usepackage{graphicx}
+\usepackage{booktabs}
+% \usepackage{tabularx}
+
+% ====================
+% Packages (added)
+% ====================
+\usepackage{lipsum}
+\usepackage{siunitx}
+\DeclareSIUnit\MVm{\mega\volt\per\metre}
+
+\usepackage{todonotes}
+\presetkeys%
+    {todonotes}%
+    {inline}{}
+ \usepackage{xspace}
+ \usepackage{subfig}
+ \usepackage{nth}
+ \usepackage[style=ieee]{biblatex}
+\renewcommand*{\bibfont}{\small}
+% ====================
+% Lengths
+% ====================
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.4625\paperwidth}
+
+% Default for three columns:
+% \setlength{\sepwidth}{0.025\paperwidth}
+% \setlength{\colwidth}{0.3\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% Increase column separator in tabular
+\setlength{\tabcolsep}{12pt}
+
+% ====================
+% Shortcuts
+% ====================
+\newcommand\cf{\emph{cf}\xspace}
+\newcommand\eg{e.g.\xspace}
+\newcommand\etou{and\slash or\xspace}
+\newcommand\etal{\emph{et al.}\xspace}
+\newcommand\etc{\emph{etc}\xspace}
+\newcommand\ie{\emph{i.e.}\xspace}
+\newcommand\noref{[\textbf{Ref ?}]}
+
+\newcommand\reffig[1]{Fig.~\ref{fig:#1}\xspace}
+\newcommand\reftab[1]{Tab.~\ref{tab:#1}\xspace}
+
+% Phys
+\newcommand\acc{\mathrm{acc}}
+\newcommand\Eacc{E_\acc}
+
+% ====================
+% Title
+% ====================
+\title{My poster}
+
+\author{A. Plaçais \inst{1} \and F. Bouly \inst{1}}
+\institute[shortinst]{%
+   \inst{1} Univ. Grenoble Alpes, CNRS, Grenoble INP*, LPSC--IN2P3, 38000 Grenoble, France
+}
+
+% ====================
+% Footer (optional)
+% ====================
+\footercontent{
+   *Institute of Engineering Univ. Grenoble Alpes \hfill
+   IPAC2023, Venice \hfill
+   \href{mailto:placais@lpsc.in2p3.fr}{placais@lpsc.in2p3.fr}
+}
+% (can be left out to remove footer)
+
+% ====================
+% Logo (optional)
+% ====================
+\newlength{\logoheight}
+\setlength{\logoheight}{6cm}
+
+\newlength{\logoswidth}
+\setlength{\logoswidth}{13cm}
+
+\logoright{%
+   \includegraphics[height=\logoheight]{images/LOGO_CNRS_2019_RVB.png}
+   % \begin{minipage}[h]{\logoswidth}
+      % \centering
+      % \includegraphics[height=\logoheight]{images/jaea.png}
+      % \vskip\floatsep
+      % \includegraphics[height=\logoheight]{images/logo_ipac23.png}
+   % \end{minipage}
+}
+\logoleft{%
+   \includegraphics[height=\logoheight]{images/LPSC_Quadri.png}
+   % \begin{minipage}[h]{\logoswidth}
+      % \centering
+      % \includegraphics[height=\logoheight]{images/LPSC_Quadri.png}
+      % \vskip\floatsep
+      % \includegraphics[height=\logoheight]{images/LOGO_CNRS_2019_RVB.png}
+   % \end{minipage}
+}
