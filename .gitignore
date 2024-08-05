@@ -7,7 +7,9 @@ archives/*
 *.blg
 *.dat
 *.dvi
+*.fdb_latexmk
 *.figlist
+*.fls
 *.glo
 *.glsdefs
 *.idx
