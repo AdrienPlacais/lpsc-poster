@@ -1,68 +1,53 @@
+%! TeX program = lualatex
 \input{preamble.tex}
 \input{preamble_tikz.tex}
-% \addbibresource{main.bib}
+\addbibresource{biblatex-examples.bib}
 \begin{document}
 
 \begin{frame}[t]
-   \begin{columns}[t]
+\begin{columns}[t]
       \separatorcolumn
       \begin{column}{\colwidth}
-         \begin{block}{Why do we want to compensate cavity failures?}
-            The RF cavities in LINACs are subject to failures, which can lead to beam losses.
-            It is a major problem for Accelerator Driven Systems (ADS), as every beam trip cause adverse thermal stress on the structure and as the restart procedure can be time-consuming.
-            A faulty cavity can be compensated for by retuning it's neighboring cavities.
+         \begin{block}{Some context}
+            \lipsum[1-2]
             \begin{figure}
                \centering
                \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
                \caption{%
-                  Local compensation of a failed cavity (red).
-                  The \num{5} neighboring cavities (orange) compensate for the fault; cavities in green remain untouched.
+                  A first figure.
                }
                \label{fig:compensation_scheme}
             \end{figure}
-            Several tools such as TraceWin can find compensation settings.
-            However, the process require a lot of manual work, which is time-consuming and error-prone.
-
-            Hence we developed LightWin, a tool to automatically find compensation settings, already tested on the MYRRHA--ADS \alert{(i) does it work for another linac?}
-
-            It is a longitudinal beam dynamics code.
-            For the sake of rapidity: envelope simulations only, hence no multiparticle or space-charge effects \alert{(ii) are these approximations too bold?}
+            \lipsum[3-4]
          \end{block}
 
-         \begin{block}{Presentation of the study case}
+         \begin{block}{Methods}
             \begin{figure}[hbtp]
                \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
                \caption{%
-                  Structure of the JAEA--ADS.
-                  \alert{We study the \nth{2} half of EllipR2: \( 940 \rightarrow \SI{1.5}{\GeV} \)}.
+                  Another figure.
                }
                \label{fig:jaea_structure}
             \end{figure}
-            JAEA--ADS is a project of ADS driven by a \SI{20}{\mA} \SI{1.5}{\GeV} proton beam.
-            Cavities accelerating field \( \Eacc \) can be increased by \SI{20}{\percent} for compensation purposes.
-            It's study is particularly interesting for us:
+            \lipsum[5]
             \begin{enumerate}[(i)]
-               \item a previous compensation study was realized using TraceWin and will serve as a benchmark;
-               \item it's beam current is high, hence space-charge effects should be significant.
+               \item Striking fact \#1.
+               \item Striking fact \#2.
             \end{enumerate}
-            We focus on the last \num{8} periods of the linac.
          \end{block}
 
-         \begin{block}{Compensation with LightWin (+ TraceWin)}
+         \begin{block}{Example case}
             \begin{figure}[hbtp]
                \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \caption{Flowchart of the compensation process.}
+               \caption{Another figure? When will it end?}
                \label{fig:flowchart}
             \end{figure}
          \end{block}
 
-         \begin{block}{LightWin (+ TraceWin) \emph{vs} TraceWin only from Ref.~: similar performances}
+         \begin{block}{Validation of the method.}
             \begin{table}
                \caption{%
-                  Beam optics performance for this study.
-                  TraceWin results are taken from Ref.~.
-                  We outlined the beam optics that were better with TraceWin than with LightWin.
-                  \alert{Both tools are equally performant\ldots~but LightWin is automatic.}
+                  This table should explain some things.
                }
                \label{tab:optics}
                \begin{center}
@@ -92,19 +77,18 @@
       \end{column}
       \separatorcolumn
       \begin{column}{\colwidth}
-         \begin{block}{Cavity error \#289: new cavity settings}
-            Example of cavity error \#289, near the end of the linac.
-            \emph{k-out-of-n} compensation method: \num{5} compensating cavities per error, as in \reffig{compensation_scheme}.
+         \begin{block}{Column II: a new hope}
+            This column should contain \alert{very important} info.
             \begin{figure}
                \centering
                \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
                \caption{%
-                  Accelerating fields and synchronous phases of the cavities for the baseline design, the design from this study and the design from previous study Ref.
+                  Wow.
                }
             \end{figure}
          \end{block}
 
-         \begin{block}{Cavity error \#289: densities}
+         \begin{block}{Some critics}
             \begin{figure}
                \centering
                \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
@@ -112,51 +96,27 @@
                \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
                \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
                \caption{%
-                  Beam densities in the transverse and longitudinal planes.
-                  Calculated with TraceWin, \( 10^6 \) particles.
+                  So many figures.
                }
             \end{figure}
 
             \begin{figure}[hbtp]
-               \subfloat[][Input]{            \includegraphics[width=.24\columnwidth]{example-image-a}}
-               \subfloat[][Output (baseline)]{ \includegraphics[width=.24\columnwidth]{example-image-a}}
-               \subfloat[][Output (LightWin (+ TraceWin))]{\includegraphics[width=.24\columnwidth]{example-image-a}}
-               \subfloat[][Output (TraceWin only Ref.)]{\includegraphics[width=.24\columnwidth]{example-image-a}}
+               \subfloat[][Sub]{            \includegraphics[width=.24\columnwidth]{example-image-a}}
+               \subfloat[][fig]{ \includegraphics[width=.24\columnwidth]{example-image-a}}
+               \subfloat[][ure]{\includegraphics[width=.24\columnwidth]{example-image-a}}
+               \subfloat[][nice]{\includegraphics[width=.24\columnwidth]{example-image-a}}
                \caption{%
-                  Yellow ellipses are \SI{100}{\percent} emittances.
+                  Several figs.
                }
-               \label{fig:emittance}
             \end{figure}
+            Here we will cite some authors \cite{westfahl:space,set,stdmodel}.
          \end{block}
 
             \begin{block}{Conclusions and perspectives}
-               We showed that:
-               \begin{itemize}
-                  \item LightWin finds acceptable compensation settings;
-                     \begin{itemize}
-                        \item[\( \rightarrow \)] similar to TraceWin, but LightWin is automatic;
-                     \end{itemize}
-                  \item neglecting space-charge effects is acceptable in this section.
-               \end{itemize}
-               Future work:
-               \begin{itemize}
-                  \item perform similar study at the start of JAEA--ADS linac;
-                     \begin{itemize}
-                        \item lower energy \( \rightarrow \) space-charge effects more prominent;
-                        \item if necessary: implement transverse dynamics, space-charge in LightWin;
-                     \end{itemize}
-                  \item new optimisation algorithms;
-                  \item explore new compensation paradigm (\eg for SPIRAL2):
-                     \begin{itemize}
-                        \item no increase in accelerating field\ldots
-                        \item \ldots~but use more cavities for compensation: \alert{global compensation}.
-                     \end{itemize}
-               \end{itemize}
-               % \todo{Shift items to right in enumerate}
-               % \todo{reduce space above jaea fig}
+               \lipsum[5-6]
             \end{block}
 
-            % \printbibliography
+            \printbibliography
          \end{column}
          \separatorcolumn
       \end{columns}

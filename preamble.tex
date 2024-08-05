@@ -19,16 +19,13 @@
 % ====================
 \usepackage{lipsum}
 \usepackage{siunitx}
-\DeclareSIUnit\MVm{\mega\volt\per\metre}
 
 \usepackage{todonotes}
-\presetkeys%
-    {todonotes}%
-    {inline}{}
- \usepackage{xspace}
- \usepackage{subfig}
- \usepackage{nth}
- \usepackage[style=ieee]{biblatex}
+\setuptodonotes{inline}
+\usepackage{xspace}
+\usepackage{subfig}
+\usepackage{nth}
+\usepackage[style=ieee]{biblatex}
 \renewcommand*{\bibfont}{\small}
 % ====================
 % Lengths
@@ -64,18 +61,18 @@
 \newcommand\reffig[1]{Fig.~\ref{fig:#1}\xspace}
 \newcommand\reftab[1]{Tab.~\ref{tab:#1}\xspace}
 
-% Phys
-\newcommand\acc{\mathrm{acc}}
-\newcommand\Eacc{E_\acc}
-
 % ====================
 % Title
 % ====================
 \title{My poster}
 
-\author{A. Plaçais \inst{1} \and F. Bouly \inst{1}}
+\author{%
+   A. Plaçais \inst{1}
+   \and P. Balkany \inst{2}
+}
 \institute[shortinst]{%
    \inst{1} Univ. Grenoble Alpes, CNRS, Grenoble INP*, LPSC--IN2P3, 38000 Grenoble, France
+   \and \inst{2} Prison de la Santé, Ministère de la Justice, 75014 Paris, France
 }
 
 % ====================
@@ -83,7 +80,7 @@
 % ====================
 \footercontent{
    *Institute of Engineering Univ. Grenoble Alpes \hfill
-   IPAC2023, Venice \hfill
+   Some conference, somewhere \hfill
    \href{mailto:placais@lpsc.in2p3.fr}{placais@lpsc.in2p3.fr}
 }
 % (can be left out to remove footer)
@@ -100,18 +97,18 @@
 \logoright{%
    \includegraphics[height=\logoheight]{images/LOGO_CNRS_2019_RVB.png}
    % \begin{minipage}[h]{\logoswidth}
-      % \centering
-      % \includegraphics[height=\logoheight]{images/jaea.png}
-      % \vskip\floatsep
-      % \includegraphics[height=\logoheight]{images/logo_ipac23.png}
+   % \centering
+   % \includegraphics[height=\logoheight]{images/jaea.png}
+   % \vskip\floatsep
+   % \includegraphics[height=\logoheight]{images/logo_ipac23.png}
    % \end{minipage}
 }
 \logoleft{%
    \includegraphics[height=\logoheight]{images/LPSC_Quadri.png}
    % \begin{minipage}[h]{\logoswidth}
-      % \centering
-      % \includegraphics[height=\logoheight]{images/LPSC_Quadri.png}
-      % \vskip\floatsep
-      % \includegraphics[height=\logoheight]{images/LOGO_CNRS_2019_RVB.png}
+   % \centering
+   % \includegraphics[height=\logoheight]{images/LPSC_Quadri.png}
+   % \vskip\floatsep
+   % \includegraphics[height=\logoheight]{images/LOGO_CNRS_2019_RVB.png}
    % \end{minipage}
 }
