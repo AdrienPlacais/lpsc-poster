@@ -2,7 +2,9 @@ archives/*
 *.aux
 *.auxlock
 *.bbl
+*.bbl-SAVE-ERROR
 *.bcf
+*.bcf-SAVE-ERROR
 *Notes.bib
 *.blg
 *.dat
