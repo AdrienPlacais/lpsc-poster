@@ -5,121 +5,121 @@
 \begin{document}
 
 \begin{frame}[t]
-\begin{columns}[t]
-      \separatorcolumn
-      \begin{column}{\colwidth}
-         \begin{block}{Some context}
-            \lipsum[1-2]
-            \begin{figure}
-               \centering
-               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \caption{%
-                  A first figure.
-               }
-               \label{fig:compensation_scheme}
-            \end{figure}
-            \lipsum[3-4]
-         \end{block}
+	\begin{columns}[t]
+		\separatorcolumn
+		\begin{column}{\colwidth}
+			\begin{block}{Some context}
+				\lipsum[1-2]
+				\begin{figure}
+					\centering
+					\includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+					\caption{%
+						A first figure.
+					}
+					\label{fig:compensation_scheme}
+				\end{figure}
+				\lipsum[3-4]
+			\end{block}
 
-         \begin{block}{Methods}
-            \begin{figure}[hbtp]
-               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \caption{%
-                  Another figure.
-               }
-               \label{fig:jaea_structure}
-            \end{figure}
-            \lipsum[5]
-            \begin{enumerate}[(i)]
-               \item Striking fact \#1.
-               \item Striking fact \#2.
-            \end{enumerate}
-         \end{block}
+			\begin{block}{Methods}
+				\begin{figure}[hbtp]
+					\includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+					\caption{%
+						Another figure.
+					}
+					\label{fig:jaea_structure}
+				\end{figure}
+				\lipsum[5]
+				\begin{enumerate}[(i)]
+					\item Striking fact \#1.
+					\item Striking fact \#2.
+				\end{enumerate}
+			\end{block}
 
-         \begin{block}{Example case}
-            \begin{figure}[hbtp]
-               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \caption{Another figure? When will it end?}
-               \label{fig:flowchart}
-            \end{figure}
-         \end{block}
+			\begin{block}{Example case}
+				\begin{figure}[hbtp]
+					\includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+					\caption{Another figure? When will it end?}
+					\label{fig:flowchart}
+				\end{figure}
+			\end{block}
 
-         \begin{block}{Validation of the method.}
-            \begin{table}
-               \caption{%
-                  This table should explain some things.
-               }
-               \label{tab:optics}
-               \begin{center}
-                  \begin{tabular}{@{} l c c c c c c c c @{}}
-                     \toprule
-                     & \multicolumn{4}{c}{$\Delta\varepsilon/\varepsilon_0$ [\si{\percent}]}     & \multicolumn{4}{c}{M} \\
-                     \cmidrule(l){2-5}         \cmidrule(r){6-9}         
-                     & \multicolumn{2}{c}{Transverse} &\multicolumn{2}{c}{Longitudinal} &\multicolumn{2}{c}{Transverse} &\multicolumn{2}{c}{Longitudinal} \\
-                     \cmidrule(l){2-3}\cmidrule(rl){4-5}\cmidrule(rl){6-7}\cmidrule(r){8-9}
-                     Faulty cavity & LightW  & TraceW       & LightW    & TraceW    & LightW & TraceW         & LightW  & TraceW                    \\
-                     \midrule                                                                                                                                   
-                     257  & \num{ 0.42}         &\num{1.07}        & \num{-1.11} &  \num{1.52} & \alert{\num{0.03}} & \alert{\num{0.02}} & \alert{\num{0.10}}& \alert{\num{0.09}}  \\
-                     258  & \num{ 0.11}         &\num{0.88}        & \num{-0.27} &  \num{1.02} & \num{0.01} & \num{0.01}         & \num{0.02}& \num{0.09}                   \\
-                     289  & \num{-0.01}         &\num{0.09}        & \num{-0.10} &  \num{0.13} & \num{0.00} & \num{0.01}         & \num{0.00}& \num{0.04}                   \\
-                     290  & \num{-0.06}         &\num{-0.17}       & \num{ 0.10} &  \num{0.25} & \num{0.00} & \num{0.03}         & \num{0.01}& \num{0.08}                   \\
-                     291  & \alert{\num{ 0.12}} &\alert{\num{0.04}}& \num{-0.03} &  \num{0.13} & \num{0.01} & \num{0.03}         & \num{0.03}& \num{0.09}                   \\
-                     292  & \alert{\num{-0.09}} &\alert{\num{0.04}}& \num{ 0.10} &  \num{0.25} & \num{0.01} & \num{0.03}         & \num{0.02}& \num{0.09}                   \\
-                     293  & \num{-0.02}         &\num{0.21}        & \num{ 0.17} &  \num{0.25} & \num{0.01} & \num{0.03}         & \num{0.02}& \num{0.09}                   \\
-                     289--293& \num{ 0.18}         &\num{1.78}  & \num{-0.29} &  \num{-1.27} & \alert{\num{0.13}} & \alert{\num{0.02}}         & \alert{\num{0.35}}& \alert{\num{0.06}}                   \\
-         % 289--293      & \num{-0.40}         &\num{1.78}        & \alert{\num{10.78}}  &  \alert{\num{-1.27}} & \alert{\num{0.08}} & \alert{\num{0.02}}         & \alert{\num{0.11}}& \alert{\num{0.06}}                   \\
-                     \bottomrule
-                  \end{tabular}
-               \end{center}
-            \end{table}
-         \end{block}
+			\begin{block}{Validation of the method.}
+				\begin{table}
+					\caption{%
+						This table should explain some things.
+					}
+					\label{tab:optics}
+					\begin{center}
+						\begin{tabular}{@{} l c c c c c c c c @{}}
+							\toprule
+							              & \multicolumn{4}{c}{$\Delta\varepsilon/\varepsilon_0$ [\si{\percent}]} & \multicolumn{4}{c}{M}                                                                                                                                                                    \\
+							\cmidrule(l){2-5}         \cmidrule(r){6-9}
+							              & \multicolumn{2}{c}{Transverse}                                        & \multicolumn{2}{c}{Longitudinal} & \multicolumn{2}{c}{Transverse} & \multicolumn{2}{c}{Longitudinal}                                                                                     \\
+							\cmidrule(l){2-3}\cmidrule(rl){4-5}\cmidrule(rl){6-7}\cmidrule(r){8-9}
+							Faulty cavity & LightW                                                                & TraceW                           & LightW                         & TraceW                           & LightW             & TraceW             & LightW             & TraceW             \\
+							\midrule
+							257           & \num{ 0.42}                                                           & \num{1.07}                       & \num{-1.11}                    & \num{1.52}                       & \alert{\num{0.03}} & \alert{\num{0.02}} & \alert{\num{0.10}} & \alert{\num{0.09}} \\
+							258           & \num{ 0.11}                                                           & \num{0.88}                       & \num{-0.27}                    & \num{1.02}                       & \num{0.01}         & \num{0.01}         & \num{0.02}         & \num{0.09}         \\
+							289           & \num{-0.01}                                                           & \num{0.09}                       & \num{-0.10}                    & \num{0.13}                       & \num{0.00}         & \num{0.01}         & \num{0.00}         & \num{0.04}         \\
+							290           & \num{-0.06}                                                           & \num{-0.17}                      & \num{ 0.10}                    & \num{0.25}                       & \num{0.00}         & \num{0.03}         & \num{0.01}         & \num{0.08}         \\
+							291           & \alert{\num{ 0.12}}                                                   & \alert{\num{0.04}}               & \num{-0.03}                    & \num{0.13}                       & \num{0.01}         & \num{0.03}         & \num{0.03}         & \num{0.09}         \\
+							292           & \alert{\num{-0.09}}                                                   & \alert{\num{0.04}}               & \num{ 0.10}                    & \num{0.25}                       & \num{0.01}         & \num{0.03}         & \num{0.02}         & \num{0.09}         \\
+							293           & \num{-0.02}                                                           & \num{0.21}                       & \num{ 0.17}                    & \num{0.25}                       & \num{0.01}         & \num{0.03}         & \num{0.02}         & \num{0.09}         \\
+							289--293      & \num{ 0.18}                                                           & \num{1.78}                       & \num{-0.29}                    & \num{-1.27}                      & \alert{\num{0.13}} & \alert{\num{0.02}} & \alert{\num{0.35}} & \alert{\num{0.06}} \\
+							% 289--293      & \num{-0.40}         &\num{1.78}        & \alert{\num{10.78}}  &  \alert{\num{-1.27}} & \alert{\num{0.08}} & \alert{\num{0.02}}         & \alert{\num{0.11}}& \alert{\num{0.06}}                   \\
+							\bottomrule
+						\end{tabular}
+					\end{center}
+				\end{table}
+			\end{block}
 
-      \end{column}
-      \separatorcolumn
-      \begin{column}{\colwidth}
-         \begin{block}{Column II: a new hope}
-            This column should contain \alert{very important} info.
-            \begin{figure}
-               \centering
-               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \caption{%
-                  Wow.
-               }
-            \end{figure}
-         \end{block}
+		\end{column}
+		\separatorcolumn
+		\begin{column}{\colwidth}
+			\begin{block}{Column II: a new hope}
+				This column should contain \alert{very important} info.
+				\begin{figure}
+					\centering
+					\includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+					\caption{%
+						Wow.
+					}
+				\end{figure}
+			\end{block}
 
-         \begin{block}{Some critics}
-            \begin{figure}
-               \centering
-               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
-               \caption{%
-                  So many figures.
-               }
-            \end{figure}
+			\begin{block}{Some critics}
+				\begin{figure}
+					\centering
+					\includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+					\includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+					\includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+					\includegraphics[width=\columnwidth,height=.2\columnwidth]{example-image-a}
+					\caption{%
+						So many figures.
+					}
+				\end{figure}
 
-            \begin{figure}[hbtp]
-               \subfloat[][Sub]{            \includegraphics[width=.24\columnwidth]{example-image-a}}
-               \subfloat[][fig]{ \includegraphics[width=.24\columnwidth]{example-image-a}}
-               \subfloat[][ure]{\includegraphics[width=.24\columnwidth]{example-image-a}}
-               \subfloat[][nice]{\includegraphics[width=.24\columnwidth]{example-image-a}}
-               \caption{%
-                  Several figs.
-               }
-            \end{figure}
-            Here we will cite some authors \cite{westfahl:space,set,stdmodel}.
-         \end{block}
+				\begin{figure}[hbtp]
+					\subfloat[][Sub]{            \includegraphics[width=.24\columnwidth]{example-image-a}}
+					\subfloat[][fig]{ \includegraphics[width=.24\columnwidth]{example-image-a}}
+					\subfloat[][ure]{\includegraphics[width=.24\columnwidth]{example-image-a}}
+					\subfloat[][nice]{\includegraphics[width=.24\columnwidth]{example-image-a}}
+					\caption{%
+						Several figs.
+					}
+				\end{figure}
+				Here we will cite some authors \cite{westfahl:space,set,stdmodel}.
+			\end{block}
 
-            \begin{block}{Conclusions and perspectives}
-               \lipsum[5-6]
-            \end{block}
+			\begin{block}{Conclusions and perspectives}
+				\lipsum[5-6]
+			\end{block}
 
-            \printbibliography
-         \end{column}
-         \separatorcolumn
-      \end{columns}
+			\printbibliography
+		\end{column}
+		\separatorcolumn
+	\end{columns}
 \end{frame}
 
 \end{document}
