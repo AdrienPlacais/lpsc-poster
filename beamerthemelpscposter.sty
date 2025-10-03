@@ -154,28 +154,33 @@
 }
 
 % Block
-\setbeamertemplate{block begin}
-{
-\begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block title}
-	\vskip0pt
-	\usebeamerfont{block title}\insertblocktitle
-	\vskip-1.25ex
-	\begin{beamercolorbox}[colsep=0.025ex]{block separator}\end{beamercolorbox}
-\end{beamercolorbox}
+\makeatletter
+\setbeamertemplate{block begin}{%
+\ifx\insertblocktitle\@empty
+	% If no title provided, skip the creation of horizontal line
+	% simply add vertical space, to have text written on the same line
+	% than a title
+	\vskip1.3ex % matches vertical offset of titled block
+\else
+	\begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block title}
+		\vskip0pt
+		\usebeamerfont{block title}\insertblocktitle
+		\vskip-1.25ex
+		\begin{beamercolorbox}[colsep=0.025ex]{block separator}\end{beamercolorbox}
+	\end{beamercolorbox}
+\fi
 {\parskip0pt\par}
 \usebeamerfont{block body}
-\vskip-0.5ex
 \begin{beamercolorbox}[colsep*=0ex]{block body}
 	\justifying
 	\setlength{\parskip}{1ex}
-	\vskip-2ex
 	}
-	\setbeamertemplate{block end}
-	{
+	\setbeamertemplate{block end}{%
 \end{beamercolorbox}
 \vskip0pt
 \vspace*{2ex}
 }
+\makeatother
 
 % Alert Block
 \setbeamertemplate{block alerted begin}
